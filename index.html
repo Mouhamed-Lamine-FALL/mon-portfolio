@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en-fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="Bootstrap/back.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body class="theme">
+
+    <nav class="cc-navbar navbar navbar-expand-lg position-fixed navbar-dark w-100">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="Img/temps-de-travail.png" alt="ico" width="30" height="24">
+        </a>
+        <a class="navbar-brand text-uppercase fw-bolder mx-4 py-3">Mon PortFolio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item pe-4">
+              <a class="nav-link active" aria-current="page">Acceuil</a>
+            </li>
+            
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+    <section class="banner1 d-flex justify-content-center align-items-center pt-5">
+        <div class="container my-5 py-5">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="Img/mefinal.png" alt="Photo de">
+            </div>
+            <div class="col-md-6">
+              <h1 class="--bs-light-text-emphasis text-light py-3 merriweather banne1-desc">
+                Étudiant en Génie Mécanique <br> Passionné par l'Innovation et la Conception
+              </h1>
+              <p>
+                <button class="btn btn-outline-info btn-lg me-5 rounded-2 merriweather" 
+                        data-bs-toggle="modal" data-bs-target="#Modal1">
+                  En savoir plus
+                </button>
+                
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="Modal1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="Modal1Label">Mouhamed Lamine FALL</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Étudiant en Génie Mécanique passionné par l’innovation et la conception <br>
+
+                Actuellement en formation d’ingénieur à l’Université de Technologie de Belfort-Montbéliard, je me spécialise en génie mécanique et conception. Mon parcours, marqué par une classe préparatoire scientifique et des projets académiques ambitieux, m'a permis de développer un esprit d'analyse et de synthèse pour résoudre des problématiques complexes. <br><br>
+                
+                Ma passion pour la mécanique, la physique et l’informatique m’a amené à travailler sur des projets innovants tels que l’optimisation et la reconception de pièces pour la fabrication additive ou encore la conception d’un robot hexapode destiné aux opérations de sauvetage en milieux hostiles. <br><br>
+                
+                Grâce à ma maîtrise de logiciels comme Fusion 360, SolidWorks, Matlab et CATIA, ainsi qu'à des bases en programmation (Python, C#), je cherche constamment à allier théorie et pratique pour concevoir des solutions mécaniques performantes et innovantes. <br><br>
+                
+                À la recherche d’une opportunité en alternance ou en stage pour mettre en application mes compétences et approfondir mon expérience dans l’industrie, je suis motivé par l’idée de contribuer à des projets techniques à fort impact.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="Mon CV.pdf" download class="btn btn-info rounded-2 merriweather">
+                    Télécharger mon CV
+                  </a>
+                  
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <hr class="bg-light">
+        </div>
+      </div>
+    </div>
+
+    <section id="projets" class="available merriweather py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <h1 class="text-uppercase">Mes Projets</h1>
+      <div class="col pb-2">
+        Quelques projets réalisés durant mon parcours en génie mécanique.
+      </div>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+      <!-- Projet 1 : Robot Hexapode -->
+<div class="col">
+    <div class="card h-100">
+      <img src="img/ROBOT.jpg" class="card-img-top" alt="Robot Hexapode">
+      <div class="card-body">
+        <h5 class="card-title">Robot Hexapode</h5>
+        <p class="card-text">Conception d’un robot hexapode autonome pour les interventions en milieux hostiles.</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalHexapode">Voir le projet</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- MODALE : Robot Hexapode -->
+  <div class="modal fade" id="ModalHexapode" tabindex="-1" aria-labelledby="ModalHexapodeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalHexapodeLabel">Robot Hexapode</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Ce projet avait pour objectif de concevoir un robot hexapode capable de se déplacer de manière autonome dans des environnements hostiles. Le robot s’inspire de la locomotion des insectes pour franchir des obstacles et s’adapter à des terrains irréguliers. <br><br>
+            Le développement a inclus l’étude cinématique, la conception des articulations et du châssis, la simulation des mouvements et la modélisation complète sous Fusion 360. Des tests sur les capteurs et des pistes de pilotage automatisé ont été intégrés. <br><br>
+            Ce projet met en œuvre des compétences en mécanique, robotique, modélisation et algorithmique.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Projet 2 : Optimisation Topologique -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/Mel2.jpg" class="card-img-top" alt="Optimisation topologique">
+      <div class="card-body">
+        <h5 class="card-title">Optimisation topologique</h5>
+        <p class="card-text">Re-design d’une pièce mécanique pour l’impression 3D (LPBF) avec Fusion 360 et Netfabb.</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalOptimisation">Voir le projet</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- MODALE : Optimisation Topologique -->
+  <div class="modal fade" id="ModalOptimisation" tabindex="-1" aria-labelledby="ModalOptimisationLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalOptimisationLabel">Optimisation topologique</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Ce projet consistait à reconcevoir une pièce appelée « mélangeur » utilisée dans un bain de métaux liquides à plus de 1000°C. La pièce devait être adaptée à la fabrication additive en acier inox 316L, tout en intégrant un circuit de refroidissement par eau et un revêtement céramique appliqué par le client. <br><br>
+            Initialement composée de 13 parties soudées, l’objectif était de réduire le nombre d’assemblages via l’impression 3D sur une machine LPBF (250x250x200 mm). Les géométries imposées ont été respectées, en particulier celles du circuit de refroidissement. <br><br>
+            Outils utilisés : Fusion 360, Netfabb, avec modélisation CAO, réflexion sur les supports d’impression, et optimisation topologique.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Projet 3 : Expérience FIMU -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/FIMU1.jpg" class="card-img-top" alt="Expérience FIMU">
+      <div class="card-body">
+        <h5 class="card-title">Expérience Innovation Crunch Time</h5>
+        <p class="card-text">Participation à l'organisation technique et logistique de la FIMU.</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalFIMU">Voir le projet</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- MODALE : FIMU -->
+  <div class="modal fade" id="ModalFIMU" tabindex="-1" aria-labelledby="ModalFIMULabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalFIMULabel">Innovation Crunch Time – FIMU</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Le Crunch Time UTBM est un challenge d’innovation rapide d’une semaine. Mon équipe et moi avons été missionnés pour concevoir une installation décorative lumineuse, durable et modulable pour le FIMU, un festival de musique international à Belfort. <br><br>
+            Ce projet nous a poussés à travailler sous pression, à prototyper rapidement, et à trouver des solutions techniques robustes et esthétiques. Nous avons dû respecter des contraintes réelles : résistance aux intempéries, sécurité, transportabilité et optimisation des coûts. <br><br>
+            Cette expérience a renforcé mes compétences en travail d’équipe, gestion de projet, créativité, ainsi qu’en dialogue avec les acteurs du monde professionnel.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Projet 4 : Étude de Flambement -->
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/flamb.png" class="card-img-top" alt="Étude de flambement">
+      <div class="card-body">
+        <h5 class="card-title">Étude de flambement</h5>
+        <p class="card-text">Analyse du flambement d’une poutre hyperstatique avec modélisation en C# et éléments finis.</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalFlambement">Voir le projet</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- MODALE : Flambement -->
+  <div class="modal fade" id="ModalFlambement" tabindex="-1" aria-labelledby="ModalFlambementLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalFlambementLabel">Étude de Flambement</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Dans le cadre du module MN41 (Modélisation numérique des problèmes de l'ingénieur), j’ai réalisé une étude sur le flambement d’une poutre hyperstatique. Le projet a débuté par une analyse analytique (formule d’Euler) puis a été poursuivi par une simulation par éléments finis codée en C#. <br><br>
+            J’ai modélisé la poutre et ses conditions limites, calculé les efforts internes, et observé les déformations selon différentes valeurs de chargement critique. Le projet a permis de comparer les résultats analytiques et numériques. <br><br>
+            Ce travail m’a permis de renforcer ma compréhension des phénomènes instables, de la modélisation EF et de la programmation scientifique.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <a href="projet Rapport.pdf" download class="btn btn-info">Télécharger le rapport</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+    </div>
+  </div>
+</section>
+
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <hr class="bg-light">
+      </div>
+    </div>
+  </div>
+      
+
+  <section class="banner2 d-flex justify-content-center align-items-center pt-5 bg-dark text-light">
+    <div class="container my-5 py-5">
+      <h2 class="text-center mb-5 merriweather">Compétences & Soft Skills</h2>
+      <div class="row">
+        
+        <!-- Colonne Compétences Techniques -->
+        <div class="col-md-6">
+          <h3 class="mb-4 merriweather">Compétences techniques</h3>
+  
+          <p>CAO – Fusion 360, SolidWorks</p>
+          <div class="progress mb-3" role="progressbar" aria-label="CAO" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-info" style="width: 85%">85%</div>
+          </div>
+  
+          <p>Simulation – Netfabb, Matlab, Abaqus</p>
+          <div class="progress mb-3" role="progressbar" aria-label="Simulation" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-info" style="width: 75%">75%</div>
+          </div>
+  
+          <p>Programmation – Python, C#, Arduino</p>
+          <div class="progress mb-3" role="progressbar" aria-label="Programmation" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-info" style="width: 70%">70%</div>
+          </div>
+  
+          <p>Fabrication additive – LPBF, impression 3D</p>
+          <div class="progress mb-3" role="progressbar" aria-label="Fabrication additive" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-info" style="width: 70%">70%</div>
+          </div>
+  
+          <p>Résistance des matériaux / FEM</p>
+          <div class="progress mb-3" role="progressbar" aria-label="RDM FEM" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-info" style="width: 80%">80%</div>
+          </div>
+        </div>
+  
+        <!-- Colonne Langues + Soft Skills -->
+        <div class="col-md-6">
+          <!-- Ligne Langues -->
+          <h3 class="mb-4 merriweather">Langues</h3>
+  
+          <p>Français – Langue maternelle</p>
+          <div class="progress mb-3" role="progressbar" aria-label="Français" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: 100%">100%</div>
+          </div>
+  
+          <p>Anglais – Niveau B2</p>
+          <div class="progress mb-3" role="progressbar" aria-label="Anglais" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: 75%">75%</div>
+          </div>
+  
+          <p>Espagnol – Notions</p>
+          <div class="progress mb-4" role="progressbar" aria-label="Espagnol" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: 40%">40%</div>
+          </div>
+  
+          <!-- Ligne Soft Skills -->
+          <h3 class="mb-3 merriweather">Soft Skills</h3>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-dark text-light">Travail en équipe</li>
+            <li class="list-group-item bg-dark text-light">Autonomie et initiative</li>
+            <li class="list-group-item bg-dark text-light">Communication</li>
+            <li class="list-group-item bg-dark text-light">Créativité</li>
+            <li class="list-group-item bg-dark text-light">Adaptabilité</li>
+          </ul>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <hr class="bg-light">
+        </div>
+      </div>
+    </div>
+
+    <section class="cc-carousel merriweather text-center">
+      <div class="container">
+        <div class="row">
+          <h1 class="text-uppercase">Expérience professionnelle</h1>
+          <div class="col pb-4">
+            <h3 class="mb-4 merriweather">Journée de découverte – Département Maintenance, ICS (Industries Chimiques du Sénégal)</h3>
+          </div>
+  
+        </div>
+        <div class="row">
+          <div class="col">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="Img/ICS1.jpeg" class="d-block w-100 rounded-2"
+                    alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="Img/ICS2.jpeg" class="d-block w-100 rounded-2 rounded-2"
+                    alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="Img/ICS3.jpeg" class="d-block w-100 rounded-2" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <!-- <div class="col merriweather text-center-center my-5">
+            <p>
+                Cette journée passée au sein du département maintenance des ICS a été une véritable révélation. J’ai pu observer de près le quotidien d’un ingénieur mécanicien, découvrir le métier de chaudronnier, et échanger avec des professionnels passionnés par leur travail. <br><br>
+Voir comment une usine fonctionne “de l’intérieur” m’a beaucoup marqué. J’ai compris à quel point la mécanique est partout, et surtout combien elle est essentielle au bon fonctionnement des installations industrielles. Cette immersion m’a donné envie d’aller plus loin, de me former, et de me rapprocher concrètement du monde de l’ingénierie. <br><br>
+Même si ce n’était qu’une journée, elle a renforcé ma motivation à devenir ingénieur en mécanique. Elle m’a permis de donner du sens à mes études, et de me projeter dans un métier qui me passionne.
+            </p>
+          </div> -->
+
+          <div class="col merriweather my-5">
+            <p style="text-align: justify;">
+              Cette journée passée au sein du département maintenance des ICS a été une véritable révélation. J’ai pu observer de près le quotidien d’un ingénieur mécanicien, découvrir le métier de chaudronnier, et échanger avec des professionnels passionnés par leur travail. <br><br>
+              Voir comment une usine fonctionne “de l’intérieur” m’a beaucoup marqué. J’ai compris à quel point la mécanique est partout, et surtout combien elle est essentielle au bon fonctionnement des installations industrielles. Cette immersion m’a donné envie d’aller plus loin, de me former, et de me rapprocher concrètement du monde de l’ingénierie. <br><br>
+              Même si ce n’était qu’une journée, elle a renforcé ma motivation à devenir ingénieur en mécanique. Elle m’a permis de donner du sens à mes études, et de me projeter dans un métier qui me passionne.
+            </p>
+          </div>
+          
+
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <hr class="bg-light">
+        </div>
+      </div>
+    </div>
+    <section class="nav-bot merriweather ">
+      <div class="row mb-2 pb-2">
+      </div>
+      <div class="row mb-2 pb-2">
+        <p class="merriweather text-center">© Copyright 2025</p>
+      </div>
+    </section>
+  
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"></script>
+  </body>
+
+</html>
