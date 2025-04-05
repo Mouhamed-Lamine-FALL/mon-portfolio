@@ -12150,6 +12150,13 @@ textarea.form-control-lg {
     height: 800px;
 }
 
+.banner1 img {
+  border-radius: 10px;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+
 .banner1 .banner1-desc {
     font-size: 40px;
     font-weight: 400px;
