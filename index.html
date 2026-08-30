@@ -1,594 +1,765 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - mon-portfolio</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouhamed Lamine FALL — Ingénieur mécanique</title>
+<meta name="description" content="Portfolio de Mouhamed Lamine FALL, étudiant ingénieur en mécanique à l'UTBM — conception CAO, simulation, fabrication additive.">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<style>
+  :root{
+    --paper:#EDF0F2;
+    --paper-deep:#E2E7EA;
+    --line:#C3CCD3;
+    --line-strong:#8C99A3;
+    --ink:#12203A;
+    --ink-soft:#4C5A70;
+    --blueprint:#0A3D62;
+    --blueprint-deep:#082C48;
+    --accent:#D6541F;
+    --surface:#FFFFFF;
+    --sans:"IBM Plex Sans", system-ui, sans-serif;
+    --cond:"IBM Plex Sans Condensed", var(--sans);
+    --mono:"IBM Plex Mono", monospace;
+  }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:var(--cond);
+    font-weight:700;
+    color:var(--ink);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .mono{font-family:var(--mono);}
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  /* ---------- sheet frame ---------- */
+  .sheet{
+    max-width:1180px;
+    margin:0 auto;
+    border-left:1px solid var(--line);
+    border-right:1px solid var(--line);
+    position:relative;
+    background:var(--paper);
+  }
+  .corner{
+    position:absolute;
+    width:18px;height:18px;
+    pointer-events:none;
+  }
+  .corner::before,.corner::after{
+    content:"";
+    position:absolute;
+    background:var(--line-strong);
+  }
+  .corner::before{width:100%;height:1px;top:0;left:0;}
+  .corner::after{width:1px;height:100%;top:0;left:0;}
+  .corner.tl{top:0;left:0;}
+  .corner.tr{top:0;right:0;transform:scaleX(-1);}
 
-  <!-- =======================================================
-  * Template Name: MyResume
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  /* ---------- header ---------- */
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 32px;
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    background:rgba(237,240,242,0.92);
+    backdrop-filter:blur(6px);
+    z-index:50;
+  }
+  .monogram{
+    width:38px;height:38px;
+    border:1.5px solid var(--ink);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--cond);
+    font-weight:700;
+    font-size:0.85rem;
+    flex-shrink:0;
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:28px;
+    margin:0;padding:0;
+  }
+  nav a{
+    text-decoration:none;
+    font-size:0.94rem;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:color .15s, border-color .15s;
+  }
+  nav a:hover{color:var(--accent);border-color:var(--accent);}
+  .nav-toggle{display:none;background:none;border:1px solid var(--ink);width:38px;height:38px;font-size:1.1rem;cursor:pointer;}
+
+  @media (max-width:820px){
+    nav ul{
+      position:fixed;top:78px;left:0;right:0;
+      flex-direction:column;
+      background:var(--surface);
+      border-bottom:1px solid var(--line);
+      padding:18px 32px;
+      gap:16px;
+      transform:translateY(-8px);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .18s, transform .18s;
+    }
+    nav ul.open{opacity:1;transform:translateY(0);pointer-events:auto;}
+    .nav-toggle{display:block;}
+  }
+
+  section{
+    padding:76px 32px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .folio{
+    position:absolute;
+    top:24px;right:32px;
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--line-strong);
+    letter-spacing:0.02em;
+  }
+  .kicker{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    color:var(--accent);
+    margin-bottom:10px;
+    display:block;
+  }
+  h2.title{font-size:clamp(1.7rem,3vw,2.3rem);max-width:640px;}
+  .lede{
+    max-width:560px;
+    color:var(--ink-soft);
+    margin-top:14px;
+    font-size:1.02rem;
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:var(--blueprint);
+    color:#fff;
+    padding:0;
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+  }
+  .hero-inner{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    min-height:560px;
+  }
+  @media (max-width:900px){
+    .hero-inner{grid-template-columns:1fr;min-height:auto;}
+  }
+  .hero-grid-bg{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size:36px 36px;
+    pointer-events:none;
+  }
+  .hero-left{
+    position:relative;
+    padding:88px 48px 56px 32px;
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  .hero-eyebrow{
+    font-family:var(--mono);
+    font-size:0.8rem;
+    color:#9FC1DB;
+    margin-bottom:18px;
+  }
+  .hero-name{
+    font-size:clamp(2.4rem,5.4vw,3.9rem);
+    line-height:1.03;
+    color:#fff;
+  }
+  .hero-role{
+    margin-top:18px;
+    font-size:1.15rem;
+    color:#D9E6EF;
+    max-width:460px;
+  }
+  .hero-cta{
+    display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;
+  }
+  .btn{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:0.92rem;
+    padding:12px 22px;
+    border:1.5px solid #fff;
+    color:#fff;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:background .15s,color .15s;
+  }
+  .btn:hover{background:#fff;color:var(--blueprint);}
+  .btn.solid{background:var(--accent);border-color:var(--accent);}
+  .btn.solid:hover{background:#B84518;color:#fff;}
+
+  .hero-right{
+    position:relative;
+    border-left:1px solid rgba(255,255,255,0.18);
+    background:rgba(0,0,0,0.08);
+    padding:40px;
+    display:flex;
+    align-items:center;
+  }
+  .titleblock{
+    width:100%;
+    border:1px solid rgba(255,255,255,0.3);
+    font-family:var(--mono);
+    font-size:0.86rem;
+  }
+  .titleblock-row{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    border-top:1px solid rgba(255,255,255,0.22);
+  }
+  .titleblock-row:first-child{border-top:none;}
+  .titleblock-row span{padding:12px 14px;}
+  .titleblock-row .field{
+    color:#9FC1DB;
+    border-right:1px solid rgba(255,255,255,0.22);
+  }
+  .titleblock-row .value{color:#fff;}
+
+  /* ---------- about ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:56px;
+    margin-top:40px;
+    align-items:start;
+  }
+  @media (max-width:800px){.about-grid{grid-template-columns:1fr;}}
+  .about-photo{
+    border:1px solid var(--line-strong);
+    overflow:hidden;
+  }
+  .about-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;}
+  .facts{
+    margin-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .fact-row{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.94rem;
+  }
+  .fact-row .field{font-family:var(--mono);font-size:0.8rem;color:var(--ink-soft);}
+
+  /* ---------- skills ---------- */
+  .skills-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:48px;
+    margin-top:40px;
+  }
+  @media (max-width:800px){.skills-cols{grid-template-columns:1fr;}}
+  .skills-cols h3{
+    font-size:1rem;
+    font-family:var(--mono);
+    font-weight:500;
+    color:var(--ink-soft);
+    margin-bottom:22px;
+    text-transform:none;
+  }
+  .meter{margin-bottom:20px;}
+  .meter-top{
+    display:flex;justify-content:space-between;
+    font-size:0.92rem;margin-bottom:6px;
+  }
+  .meter-top .pct{font-family:var(--mono);color:var(--ink-soft);font-size:0.82rem;}
+  .meter-track{
+    height:8px;
+    background:
+      repeating-linear-gradient(90deg, var(--line-strong) 0 1px, transparent 1px 10%);
+    background-color:var(--paper-deep);
+    border:1px solid var(--line);
+    position:relative;
+  }
+  .meter-fill{
+    height:100%;
+    background:var(--blueprint);
+    position:relative;
+  }
+  .meter-fill::after{
+    content:"";
+    position:absolute;right:-1px;top:-3px;bottom:-3px;
+    width:2px;background:var(--accent);
+  }
+
+  /* ---------- timeline ---------- */
+  .timeline-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:56px;
+    margin-top:44px;
+  }
+  @media (max-width:800px){.timeline-cols{grid-template-columns:1fr;}}
+  .timeline{position:relative;padding-left:26px;border-left:1.5px solid var(--line-strong);}
+  .t-item{position:relative;padding-bottom:34px;}
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:"";
+    position:absolute;left:-31px;top:4px;
+    width:9px;height:9px;
+    background:var(--accent);
+    border:2px solid var(--paper);
+    outline:1px solid var(--accent);
+  }
+  .t-date{font-family:var(--mono);font-size:0.78rem;color:var(--accent);}
+  .t-title{margin-top:6px;font-size:1.06rem;}
+  .t-org{font-size:0.88rem;color:var(--ink-soft);font-style:italic;margin-top:2px;}
+  .t-desc{margin-top:8px;font-size:0.93rem;color:var(--ink-soft);}
+  .t-desc ul{margin:6px 0 0 18px;padding:0;}
+
+  /* ---------- projects ---------- */
+  .filters{
+    display:flex;gap:10px;margin-top:36px;flex-wrap:wrap;
+  }
+  .filter-btn{
+    font-family:var(--mono);
+    font-size:0.82rem;
+    padding:8px 16px;
+    border:1px solid var(--line-strong);
+    background:transparent;
+    color:var(--ink-soft);
+    cursor:pointer;
+    transition:background .15s,color .15s,border-color .15s;
+  }
+  .filter-btn.active,.filter-btn:hover{
+    background:var(--ink);color:var(--paper);border-color:var(--ink);
+  }
+  .project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    margin-top:32px;
+    border:1px solid var(--line);
+  }
+  @media (max-width:900px){.project-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:620px){.project-grid{grid-template-columns:1fr;}}
+  .card{
+    background:var(--surface);
+    display:flex;flex-direction:column;
+    transition:opacity .2s, transform .2s;
+  }
+  .card.hidden{display:none;}
+  .card-img{
+    aspect-ratio:4/3;
+    overflow:hidden;
+    position:relative;
+  }
+  .card-img img{width:100%;height:100%;object-fit:cover;}
+  .card-body{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column;}
+  .card-cat{font-family:var(--mono);font-size:0.72rem;color:var(--accent);}
+  .card-title{font-size:1.02rem;margin-top:8px;}
+  .card-desc{font-size:0.88rem;color:var(--ink-soft);margin-top:8px;flex:1;}
+  .card-link{
+    margin-top:14px;font-size:0.82rem;font-family:var(--mono);
+    text-decoration:none;color:var(--ink);border-top:1px solid var(--line);padding-top:10px;
+  }
+  .card-link:hover{color:var(--accent);}
+
+  /* ---------- contact ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:56px;
+    margin-top:40px;
+  }
+  @media (max-width:800px){.contact-grid{grid-template-columns:1fr;}}
+  .field-group{margin-bottom:20px;}
+  .field-group label{
+    display:block;font-family:var(--mono);font-size:0.78rem;color:var(--ink-soft);margin-bottom:6px;
+  }
+  .field-group input,.field-group textarea{
+    width:100%;
+    border:none;
+    border-bottom:1.5px solid var(--line-strong);
+    background:transparent;
+    padding:9px 2px;
+    font-family:var(--sans);
+    font-size:0.98rem;
+    color:var(--ink);
+  }
+  .field-group input:focus,.field-group textarea:focus{
+    outline:none;border-color:var(--accent);
+  }
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:560px){.row2{grid-template-columns:1fr;}}
+  .submit-btn{
+    font-family:var(--mono);
+    font-size:0.9rem;
+    padding:13px 30px;
+    background:var(--ink);
+    color:var(--paper);
+    border:none;
+    cursor:pointer;
+    transition:background .15s;
+  }
+  .submit-btn:hover{background:var(--accent);}
+
+  footer{
+    padding:36px 32px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    font-size:0.86rem;color:var(--ink-soft);
+  }
+  footer .social{display:flex;gap:16px;}
+  footer a{text-decoration:none;color:var(--ink-soft);}
+  footer a:hover{color:var(--accent);}
+</style>
 </head>
+<body>
 
-<body class="index-page">
+<div class="sheet">
+  <span class="corner tl"></span>
+  <span class="corner tr"></span>
 
-  <header id="header" class="header d-flex flex-column justify-content-center">
-
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index.html#hero" class="active"><i class="bi bi-house navicon"></i><span>Acceuil</span></a></li>
-        <li><a href="index.html#about"><i class="bi bi-person navicon"></i><span>A propos</span></a></li>
-        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i><span>curriculum vitae</span></a></li>
-        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
-        <!-- <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Services</span></a></li> -->
-        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
+  <header>
+    <a href="#hero" style="text-decoration:none;display:flex;align-items:center;gap:14px;">
+      <div class="monogram">MLF</div>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu">☰</button>
+    <nav>
+      <ul id="navList">
+        <li><a href="#about">Profil</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-
   </header>
 
-  <main  class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
-
-      <img src="assets/img/Banner.jpg" alt="">
-
-      <div class="container" data-aos="zoom-out">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <h2>Mouhamed Lamine FALL</h2>
-            <p>Je suis <span class="typed" data-typed-items="Etudiant en Spécialité Mécanique">Jeune passionné, Créatif, Curieux</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-            <div class="social-links">
-              <a href="https://x.com/fall_mouha17562?s=21"><i class="bi bi-twitter-x"></i></a>
-              <a href="https://www.instagram.com/everyonehates.lamine?igsh=MTAxNXkyYnNpb2pwMA%3D%3D&utm_source=qr"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/in/mouhamed-lamine-fall-mon-profil/"><i class="bi bi-linkedin"></i></a>
-              <a href="Docs/Mon CV.pdf" download><i class="bi bi-download"></i></a>
-            </div>
-          </div>
+  <!-- HERO -->
+  <section id="hero" class="hero" style="border-bottom:1px solid var(--line);padding:0;">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <span class="hero-eyebrow">Portfolio — France</span>
+        <h1 class="hero-name">Mouhamed<br>Lamine FALL</h1>
+        <p class="hero-role">Étudiant ingénieur en mécanique à l'UTBM, orienté conception CAO, simulation et fabrication additive — avec un intérêt marqué pour l'aéronautique et l'automobile.</p>
+        <div class="hero-cta">
+          <a href="Docs/Mon CV.pdf" class="btn solid" download>Télécharger le CV</a>
+          <a href="https://www.linkedin.com/in/mouhamed-lamine-fall-mon-profil/" class="btn">LinkedIn</a>
         </div>
       </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>A propos</h2>
-        <p>Salut à tous !
-          Bienvenue sur mon site, l'antre d’un étudiant en génie mécanique passionné par l’innovation, la bidouille high-tech et les défis bien corsés.
-          Entre conception 3D, robotique et optimisation pour la fabrication additive, je jongle avec les idées pour donner vie à des projets qui sortent du cadre !</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/Profil.png" class="img-fluid" style="border-radius: 20px;" alt="">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>Etudiant en spécialité mécanique</h2>
-            <p class="fst-italic py-3">
-              Envie d’en savoir plus sur moi ? Retrouvez ici quelques infos pratiques : mon âge, où je vis, mon parcours scolaire, mes contacts… tout ce qu’il faut pour mieux me connaître en un clin d’œil !
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Anniversaire:</strong> <span>7 Sep 2003</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Site web:</strong> <span>https://mouhamed-lamine-fall.github.io/mon-portfolio/</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>ville:</strong> <span>Sevenans, Belfort</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>22</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Diplome:</strong> <span>Diplome d'Ingénieur (En cours)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>fall.mouhamedlamine07@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Travail:</strong> <span>Ouvert à toute possibilité</span></li>
-                </ul>
-              </div>
-            </div>
-            <!-- <p class="py-3">
-              Maintenant que vous connaissez un peu mieux mon parcours et qui je suis, passons aux choses sérieuses : les skills ! De la conception mécanique à la programmation, voici ce que je maîtrise pour transformer les idées en projets concrets."
-            </p> -->
-          </div>
-        </div>
-        <div class="container section-title" data-aos="fade-up">
-          <p class="py-3">
-            Maintenant que vous connaissez un peu mieux mon parcours et qui je suis, passons aux choses sérieuses : les skills ! De la conception mécanique à la programmation, voici ce que je maîtrise pour transformer les idées en projets concrets.
-          </p>
-        </div><!-- End Section Title -->
-        
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>C’est bien beau de parler de moi… mais mes vraies armes, les voilà : compétences, logiciels, langages. Bref, ce que je mets en œuvre pour faire la différence.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>Fusion 360</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>SolidWorks</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>CATIA V5</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>HyperWorks</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Matlab</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Abaqus</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>Connaissance Technique</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Fabrication Additive</span> <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>RDM</span> <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Elements finis</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Projection Thermique</span> <i class="val">45%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-            <div class="progress">
-              <span class="skill"><span>Programation (Python, C#)</span> <i class="val">78%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!-- End Skills Item -->
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Skills Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>curriculum vitae</h2>
-        <p>Prépa, projets costauds, école d’ingé : mon parcours, c’est une montée en compétences continue, guidée par l’envie de concevoir des solutions concrètes.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sommaire</h3>
-
-            <div class="resume-item pb-0">
-              <h4>Mouhamed Lamine FALL</h4>
-              <p><em>Ingénieur en devenir, passionné par la mécanique, la conception et l’innovation. De la modélisation 3D à la programmation, toujours prêt à relever des défis techniques avec créativité et rigueur.</em></p>
-              <ul>
-                <li>Sevenans, Belfort</li>
-                <li>fall.mouhamedlamine07@gmail.com</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            <h3 class="resume-title">Formation</h3>
-            <div class="resume-item">
-              <h4>Formation d'Ingénieur en spécialité mécanique</h4>
-              <h5>Depuis Septembre 2024</h5>
-              <p><em>Université de Technologie de Belfort-Montbéliard, Campus de Sevenans</em></p>
-              <p>Actuellement en formation d’ingénieur en Génie Mécanique à l’UTBM, un vrai terrain de jeu pour nourrir ma curiosité et mon envie de créer. C’est là que je plonge dans des projets concrets, entre innovation technique et défis collaboratifs.</p>
-            </div><!-- Edn Resume Item -->
-
-            <div class="resume-item">
-              <h4>Classe préparatoire intégrée spécialité MPSI</h4>
-              <h5>2022 - 2024</h5>
-              <p><em>Cours Sainte Marie de Hann, Dakar, Sénégal</em></p>
-              <p>Deux années en classe préparatoire scientifique MPSI, là où tout a vraiment commencé. Entre rigueur, café serré et équations à rallonge, j’y ai forgé les bases solides qui me portent aujourd’hui dans l’ingénierie.</p>
-            </div><!-- Edn Resume Item -->
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="resume-title">Projets Academiques</h3>
-            
-            <div class="resume-item">
-              <h4>Modélisation et simulation d’un moteur radial à 7 cylindres</h4>
-              <h5>Fevrier 2025 - Mai 2025 (3 mois)</h5>
-              <p><em>Projet Académique, Unité d'Enseignement CP42</em></p>
-              <ul>
-                <li>J’ai développé des compétences avancées en conception assistée par ordinateur (CAO) et en gestion d'assemblages mécaniques complexes.</li>
-                <li>J’ai approfondi ma compréhension des cycles moteurs et de la transformation de mouvement bielle-manivelle, tout en maîtrisant les liaisons cinématiques entre le vilebrequin, la bielle maîtresse et les bielles secondaires. Ce projet m'a également permis d'optimiser la précision des ajustements et de simuler le comportement dynamique des pièces en mouvement.</li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-            
-            <div class="resume-item">
-              <h4>Optimisation et reconception d’un mélangeur métallique pour fabrication additive </h4>
-              <h5>Novembre 2024 (1 mois)</h5>
-              <p><em>Projet UE FA31 - Fabrication Additive UTBM </em></p>
-              <ul>
-                <li>J’ai renforcé mes compétences en modélisation 3D, en conception pour la fabrication additive et en optimisation topologique. </li>
-                <li>J’ai intégré des contraintes thermiques et fonctionnelles réelles dans une démarche de conception. </li>
-              </ul>
-            </div><!-- Edn Resume Item -->
-
-            
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Resume Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Curieux de voir ce qui se trame côté projets ? Le portfolio est là pour ça, entre idées bien ficelées et réalisations concrètes !</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-Scolaire">Scolaires</li>
-            <li data-filter=".filter-Stage">Stages</li>
-            <li data-filter=".filter-Perso">Perso</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-
-            <!-- Scolaires
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Scolaire">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div> -->
-
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Scolaire">
-              <img src="assets/img/portfolio/CP42/vue de face.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Modélisation d'un moteur radial</h4>
-                <p>Conception CAO d'un moteur radial et simulation du mécanisme à l'intérieur.</p>
-                <a href="assets/img/portfolio/CP42/vue de face.png" title="Étude de flambement" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html#CP42" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Scolaire">
-              <img src="assets/img/masonry-portfolio/flamb.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Étude de flambement</h4>
-                <p>Analyse du flambement d’une poutre hyperstatique avec modélisation en C# et éléments finis.</p>
-                <a href="assets/img/masonry-portfolio/flamb.png" title="Étude de flambement" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html#FLAMBEMENT" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Scolaire">
-              <img src="assets/img/masonry-portfolio/ROBOT.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Robot Hexapode</h4>
-                <p>Conception d’un robot hexapode autonome pour les interventions en milieux hostiles.</p>
-                <a href="assets/img/masonry-portfolio/ROBOT.jpg" title="Robot Hexapode" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html#ROBOT" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Scolaire">
-              <img src="assets/img/masonry-portfolio/Mel2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Optimisation topologique</h4>
-                <p>Re-design d’une pièce mécanique pour l’impression 3D (LPBF) avec Fusion 360 et Netfabb.</p>
-                <a href="assets/img/masonry-portfolio/Mel2.jpg" title="Optimisation topologique" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html#FA31" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <!-- Stage ST40 (images à mettre, et page description)-->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Stage">
-              <img src="assets/img/masonry-portfolio/Stage.png" class="img-fluid" alt="torche">
-              <div class="portfolio-info">
-                <h4>Stage Laboratoire ICB LERMPS</h4>
-                <p>Développement de revêtements fonctionnels par projection thermique.</p>
-                <a href="assets/img/masonry-portfolio/Image Torche.jpeg" title="Stage Laboratoire ICB LERMPS" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html#ST40" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <!-- PERSO-->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Perso">
-              <img src="assets/img/masonry-portfolio/FIMU1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Expérience Innovation Crunch Time</h4>
-                <p>Participant d’un Hackathon d’innovation</p>
-                <a href="assets/img/masonry-portfolio/FIMU1.jpg" title="Expérience Innovation Crunch Time" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html#FIMU" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Perso">
-              <img src="assets/img/masonry-portfolio/ICS2.jpeg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Journée de découverte</h4>
-                <p>Département Maintenance, ICS (Industries Chimiques du Sénégal)</p>
-                <a href="assets/img/masonry-portfolio/ICS2.jpeg" title="Journée de découverte" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html#JOURNEE_DECOUVERTE" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Perso">
-              <img src="assets/img/portfolio/Simulation.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Conception d'un mini serveur</h4>
-                <p>Modélisation, simulation et conception d'un mini serveur</p>
-                <a href="assets/img/portfolio/Simulation.png" title="Server" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html#SERVER" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-
-
-            
-
-
-            <!-- Stages
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Stage">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div> -->
-
-            <!-- Perso
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Perso">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div> -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-        <p>Une question, une idée ou juste envie de papoter ? Laisse un message juste ici, je réponds toujours avec plaisir (et parfois même très vite) !</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4">
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0"></i>
-              <div>
-                <h3>Addresse</h3>
-                <p>Sevenans, Belfort</p>
-              </div>
-            </div><!-- End Info Item -->
-
-            
-
-            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email</h3>
-                <p>fall.mouhamedlamine07@gmail.com</p>
-              </div>
-            </div><!-- End Info Item -->
-
-          </div>
-
-          <div class="col-lg-8">
-            <form action="https://formspree.io/f/mgvaggjb" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-              <div class="row gy-4">
-            
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                </div>
-            
-                <div class="col-md-6">
-                  <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                </div>
-            
-                <div class="col-md-12">
-                  <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-                </div>
-            
-                <div class="col-md-12">
-                  <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
-                </div>
-            
-                <div class="col-md-12 text-center">
-                  <button type="submit">Send Message</button>
-                </div>
-            
-              </div>
-            </form>
-            
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-    <div class="container">
-      <h3 class="sitename">Mouhamed Lamine FALL</h3>
-      <p>Merci d’avoir parcouru mon univers ! L’aventure continue, alors reste connecté et, qui sait, à très bientôt sur un nouveau projet.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://x.com/fall_mouha17562?s=21"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://www.instagram.com/everyonehates.lamine?igsh=MTAxNXkyYnNpb2pwMA%3D%3D&utm_source=qr"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/mouhamed-lamine-fall-mon-profil/"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Lamine.F</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      <div class="hero-right">
+        <div class="titleblock">
+          <div class="titleblock-row"><span class="field">Formation</span><span class="value">Diplôme d'ingénieur — UTBM</span></div>
+          <div class="titleblock-row"><span class="field">Spécialité</span><span class="value">Génie mécanique / FISE-MECA</span></div>
+          <div class="titleblock-row"><span class="field">Basé à</span><span class="value">Belfort, France</span></div>
+          <div class="titleblock-row"><span class="field">Diplôme prévu</span><span class="value">En cours</span></div>
+          <div class="titleblock-row"><span class="field">Disponibilité</span><span class="value">Ouvert à toute opportunité</span></div>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <span class="folio">FEUILLE 01/05</span>
+    <span class="kicker">Profil</span>
+    <h2 class="title">Génie mécanique, curiosité technique et goût du concret</h2>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="assets/img/Profil.png" alt="Portrait de Mouhamed Lamine FALL">
+      </div>
+      <div>
+        <p class="lede" style="max-width:100%;">
+          Étudiant en génie mécanique à l'UTBM, je m'intéresse à la conception 3D, à la simulation numérique et à l'optimisation pour la fabrication additive. J'aime comprendre comment une pièce fonctionne avant de la redessiner et pousser les projets un peu plus loin que ce qui est demandé.
+        </p>
+        <p class="lede" style="max-width:100%;margin-top:14px;">
+          En dehors des cours, je bidouille avec des microcontrôleurs (Raspberry Pi, ESP32) et je monte en compétences en programmation pour relier le monde mécanique et le monde électronique.
+        </p>
+        <div class="facts">
+          <div class="fact-row"><span class="field mono">Anniversaire</span><span>7 septembre 2003</span></div>
+          <div class="fact-row"><span class="field mono">Ville</span><span>Belfort</span></div>
+          <div class="fact-row"><span class="field mono">Email</span><span>fall.mouhamedlamine07@gmail.com</span></div>
+          <div class="fact-row"><span class="field mono">Statut</span><span>Ouvert à toute possibilité</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <span class="folio">FEUILLE 02/05</span>
+    <span class="kicker">Compétences</span>
+    <h2 class="title">Outils de conception, calcul et programmation</h2>
+    <div class="skills-cols">
+      <div>
+        <h3>CAO &amp; calcul</h3>
+        <div class="meter" data-pct="90"><div class="meter-top"><span>Fusion 360</span><span class="pct">90%</span></div><div class="meter-track"><div class="meter-fill" style="width:90%"></div></div></div>
+        <div class="meter" data-pct="75"><div class="meter-top"><span>CATIA V5</span><span class="pct">75%</span></div><div class="meter-track"><div class="meter-fill" style="width:75%"></div></div></div>
+        <div class="meter" data-pct="70"><div class="meter-top"><span>SolidWorks</span><span class="pct">70%</span></div><div class="meter-track"><div class="meter-fill" style="width:70%"></div></div></div>
+        <div class="meter" data-pct="75"><div class="meter-top"><span>HyperWorks</span><span class="pct">75%</span></div><div class="meter-track"><div class="meter-fill" style="width:75%"></div></div></div>
+        <div class="meter" data-pct="90"><div class="meter-top"><span>Matlab</span><span class="pct">90%</span></div><div class="meter-track"><div class="meter-fill" style="width:90%"></div></div></div>
+        <div class="meter" data-pct="75"><div class="meter-top"><span>Abaqus</span><span class="pct">75%</span></div><div class="meter-track"><div class="meter-fill" style="width:75%"></div></div></div>
+      </div>
+      <div>
+        <h3>Technique &amp; programmation</h3>
+        <div class="meter" data-pct="80"><div class="meter-top"><span>Connaissance technique</span><span class="pct">80%</span></div><div class="meter-track"><div class="meter-fill" style="width:80%"></div></div></div>
+        <div class="meter" data-pct="60"><div class="meter-top"><span>Fabrication additive</span><span class="pct">60%</span></div><div class="meter-track"><div class="meter-fill" style="width:60%"></div></div></div>
+        <div class="meter" data-pct="70"><div class="meter-top"><span>RDM</span><span class="pct">70%</span></div><div class="meter-track"><div class="meter-fill" style="width:70%"></div></div></div>
+        <div class="meter" data-pct="80"><div class="meter-top"><span>Éléments finis</span><span class="pct">80%</span></div><div class="meter-track"><div class="meter-fill" style="width:80%"></div></div></div>
+        <div class="meter" data-pct="45"><div class="meter-top"><span>Projection thermique</span><span class="pct">45%</span></div><div class="meter-track"><div class="meter-fill" style="width:45%"></div></div></div>
+        <div class="meter" data-pct="78"><div class="meter-top"><span>Python / C#</span><span class="pct">78%</span></div><div class="meter-track"><div class="meter-fill" style="width:78%"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCOURS -->
+  <section id="parcours">
+    <span class="folio">FEUILLE 03/05</span>
+    <span class="kicker">Parcours</span>
+    <h2 class="title">Formation et projets académiques</h2>
+    <div class="timeline-cols">
+      <div>
+        <h3 style="font-family:var(--mono);font-size:0.9rem;color:var(--ink-soft);font-weight:500;margin-bottom:20px;">Formation</h3>
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-date">Depuis septembre 2024</div>
+            <div class="t-title">Diplôme d'ingénieur, spécialité mécanique</div>
+            <div class="t-org">UTBM, Campus de Sevenans</div>
+            <div class="t-desc">Formation d'ingénieur en génie mécanique, entre projets concrets, innovation technique et travail collaboratif.</div>
+          </div>
+          <div class="t-item">
+            <div class="t-date">2022 – 2024</div>
+            <div class="t-title">Classe préparatoire intégrée, spécialité MPSI</div>
+            <div class="t-org">Cours Sainte Marie de Hann, Dakar, Sénégal</div>
+            <div class="t-desc">Deux années de prépa scientifique qui ont posé les bases solides utilisées aujourd'hui en école d'ingénieur.</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--mono);font-size:0.9rem;color:var(--ink-soft);font-weight:500;margin-bottom:20px;">Projets académiques</h3>
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-date">Fév. – Mai 2025 (3 mois)</div>
+            <div class="t-title">Modélisation d'un moteur radial à 7 cylindres</div>
+            <div class="t-org">Unité d'enseignement CP42</div>
+            <div class="t-desc">
+              <ul>
+                <li>Conception assistée par ordinateur et gestion d'assemblages mécaniques complexes.</li>
+                <li>Cinématique bielle-manivelle, liaisons entre vilebrequin, bielle maîtresse et bielles secondaires, simulation du comportement dynamique.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-date">Novembre 2024 (1 mois)</div>
+            <div class="t-title">Reconception d'un mélangeur métallique pour fabrication additive</div>
+            <div class="t-org">UE FA31 — Fabrication Additive, UTBM</div>
+            <div class="t-desc">
+              <ul>
+                <li>Modélisation 3D, conception pour la fabrication additive et optimisation topologique.</li>
+                <li>Intégration de contraintes thermiques et fonctionnelles réelles dans la démarche de conception.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projets">
+    <span class="folio">FEUILLE 04/05</span>
+    <span class="kicker">Projets</span>
+    <h2 class="title">Réalisations scolaires, stage et projets personnels</h2>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Tous</button>
+      <button class="filter-btn" data-filter="scolaire">Scolaires</button>
+      <button class="filter-btn" data-filter="stage">Stages</button>
+      <button class="filter-btn" data-filter="perso">Perso</button>
+    </div>
+    <div class="project-grid" id="projectGrid">
+
+      <div class="card" data-cat="scolaire">
+        <div class="card-img"><img src="assets/img/portfolio/CP42/vue de face.png" alt="Moteur radial"></div>
+        <div class="card-body">
+          <span class="card-cat">Scolaire</span>
+          <h4 class="card-title">Modélisation d'un moteur radial</h4>
+          <p class="card-desc">Conception CAO d'un moteur radial et simulation du mécanisme à l'intérieur.</p>
+          <a class="card-link" href="portfolio-details.html#CP42">En savoir plus →</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="scolaire">
+        <div class="card-img"><img src="assets/img/masonry-portfolio/flamb.png" alt="Étude de flambement"></div>
+        <div class="card-body">
+          <span class="card-cat">Scolaire</span>
+          <h4 class="card-title">Étude de flambement</h4>
+          <p class="card-desc">Analyse du flambement d'une poutre hyperstatique, modélisation en C# et éléments finis.</p>
+          <a class="card-link" href="portfolio-details.html#FLAMBEMENT">En savoir plus →</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="scolaire">
+        <div class="card-img"><img src="assets/img/masonry-portfolio/ROBOT.jpg" alt="Robot hexapode"></div>
+        <div class="card-body">
+          <span class="card-cat">Scolaire</span>
+          <h4 class="card-title">Robot hexapode</h4>
+          <p class="card-desc">Conception d'un robot hexapode autonome pour les interventions en milieux hostiles.</p>
+          <a class="card-link" href="portfolio-details.html#ROBOT">En savoir plus →</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="scolaire">
+        <div class="card-img"><img src="assets/img/masonry-portfolio/Mel2.jpg" alt="Optimisation topologique"></div>
+        <div class="card-body">
+          <span class="card-cat">Scolaire</span>
+          <h4 class="card-title">Optimisation topologique</h4>
+          <p class="card-desc">Re-design d'une pièce mécanique pour l'impression 3D (LPBF) avec Fusion 360 et Netfabb.</p>
+          <a class="card-link" href="portfolio-details.html#FA31">En savoir plus →</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="stage">
+        <div class="card-img"><img src="assets/img/masonry-portfolio/Stage.png" alt="Stage ICB LERMPS"></div>
+        <div class="card-body">
+          <span class="card-cat">Stage</span>
+          <h4 class="card-title">Laboratoire ICB LERMPS</h4>
+          <p class="card-desc">Développement de revêtements fonctionnels par projection thermique.</p>
+          <a class="card-link" href="portfolio-details.html#ST40">En savoir plus →</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="perso">
+        <div class="card-img"><img src="assets/img/masonry-portfolio/FIMU1.jpg" alt="Hackathon Crunch Time"></div>
+        <div class="card-body">
+          <span class="card-cat">Perso</span>
+          <h4 class="card-title">Expérience Innovation Crunch Time</h4>
+          <p class="card-desc">Participation à un hackathon d'innovation.</p>
+          <a class="card-link" href="portfolio-details.html#FIMU">En savoir plus →</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="perso">
+        <div class="card-img"><img src="assets/img/masonry-portfolio/ICS2.jpeg" alt="Journée découverte ICS"></div>
+        <div class="card-body">
+          <span class="card-cat">Perso</span>
+          <h4 class="card-title">Journée de découverte</h4>
+          <p class="card-desc">Département Maintenance, ICS (Industries Chimiques du Sénégal).</p>
+          <a class="card-link" href="portfolio-details.html#JOURNEE_DECOUVERTE">En savoir plus →</a>
+        </div>
+      </div>
+
+      <div class="card" data-cat="perso">
+        <div class="card-img"><img src="assets/img/portfolio/Simulation.png" alt="Mini serveur"></div>
+        <div class="card-body">
+          <span class="card-cat">Perso</span>
+          <h4 class="card-title">Conception d'un mini serveur</h4>
+          <p class="card-desc">Modélisation, simulation et conception d'un mini serveur.</p>
+          <a class="card-link" href="portfolio-details.html#SERVER">En savoir plus →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="border-bottom:none;">
+    <span class="folio">FEUILLE 05/05</span>
+    <span class="kicker">Contact</span>
+    <h2 class="title">Une question, un stage, un projet à monter ?</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="facts" style="margin-top:8px;">
+          <div class="fact-row"><span class="field mono">Adresse</span><span>Belfort</span></div>
+          <div class="fact-row"><span class="field mono">Email</span><span>fall.mouhamedlamine07@gmail.com</span></div>
+        </div>
+      </div>
+      <form action="https://formspree.io/f/mgvaggjb" method="POST">
+        <div class="row2">
+          <div class="field-group">
+            <label for="f-name">Nom</label>
+            <input id="f-name" type="text" name="name" required>
+          </div>
+          <div class="field-group">
+            <label for="f-email">Email</label>
+            <input id="f-email" type="email" name="email" required>
+          </div>
+        </div>
+        <div class="field-group">
+          <label for="f-subject">Sujet</label>
+          <input id="f-subject" type="text" name="subject" required>
+        </div>
+        <div class="field-group">
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Envoyer le message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Mouhamed Lamine FALL</span>
+    <div class="social">
+      <a href="https://www.linkedin.com/in/mouhamed-lamine-fall-mon-profil/">LinkedIn</a>
+      <a href="https://x.com/fall_mouha17562?s=21">X</a>
+      <a href="https://www.instagram.com/everyonehates.lamine?igsh=MTAxNXkyYnNpb2pwMA%3D%3D&utm_source=qr">Instagram</a>
+    </div>
   </footer>
+</div>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+<script>
+  // mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navList = document.getElementById('navList');
+  navToggle.addEventListener('click', () => navList.classList.toggle('open'));
+  navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  // project filters
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('#projectGrid .card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(card => {
+        card.classList.toggle('hidden', f !== 'all' && card.dataset.cat !== f);
+      });
+    });
+  });
+</script>
 </body>
-
 </html>
